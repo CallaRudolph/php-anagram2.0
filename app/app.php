@@ -16,7 +16,7 @@
     $app->get("/result", function() use ($app) {
         $my_input = new Anagram;
         $my_anagram = $my_input->anagramChecker($_GET['base_word'], $_GET['input1'], $_GET['input2'], $_GET['input3']);
-        return $app['twig']->render('results.html.twig', array('results' => $my_anagram));
+        return $app['twig']->render('results.html.twig', array('results' => $my_anagram, 'base_word' => $_GET['base_word']));
     });
 
     return $app;

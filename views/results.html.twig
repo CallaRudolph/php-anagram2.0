@@ -4,7 +4,7 @@
     <title>Anagram Results</title>
   </head>
   <body>
-    <h1>Here are your results:</h1>
+    <h1>Here are your results compared to {{ base_word }}:</h1>
     <p>These results were correct:</p>
     {% for key in results|keys %}
       {% if results[key] == true %}
