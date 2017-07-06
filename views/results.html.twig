@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anagram Results</title>
+  </head>
+  <body>
+    <h1>Here are your results:</h1>
+    <p>These results were correct:</p>
+    {% for key in results|keys %}
+      {% if results[key] == true %}
+        <p>{{ key }}</p>
+      {% endif %}
+    {% endfor %}
+    <p>These weren't good:</p>
+    {% for key in results|keys %}
+      {% if results[key] == false %}
+          <p>{{ key }}</p>
+      {% endif %}
+    {% endfor %}
+    <a href="/">try again</a>
+  </body>
+</html>
